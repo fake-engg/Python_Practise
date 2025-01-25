@@ -32,6 +32,8 @@ cus1.show_balance()
 
 #---- CHANGED THE SCOPE OF WALLETBALANCE VARIABLE ------#
 
+'''
+
 class Customer:
     def __init__(self, name, age, walletBalance):
         self.name = name
@@ -58,4 +60,73 @@ cus1.walletBalance=500000 # After changing the scope, this line had no impact on
 # now our previously known walletBalance exists as _Customer__walletBalance i.e. _<class_name>__<variable_name>.
 
 cus1.show_balance()
+
+'''
+
+#-------------------END---------------------#
+
+# Encapsulation - exercise
+
+class Student:
+    def __init__(self, student_id=None,marks=None,age=None):
+        self.__student_id=None
+        self.__marks = None
+        self.__age =None
+
+    def set_marks(self,marks):
+        self.__marks = marks
+
+    def get_marks(self):
+        return self.__marks
+    
+    def set_id(self, student_id):
+        self.__student_id = student_id
+
+    def get_id(self):
+        return self.__student_id
+    
+    def set_age(self,age):
+        self.__age = age
+
+    def get_age(self):
+        return self.__age
+    
+    def validate_marks(self):
+        if self.get_marks() >=0 and self.get_marks()<=100:
+            return True
+        else:
+            return False
+    def validate_age(self):
+        if self.get_age()>20:
+            return True
+        else:
+            return False
+       
+    def check_qualification(self):
+        if self.validate_marks() ==True:
+            if int(self.get_marks()) >= 65:
+                return True
+            else:
+                return False
+        else:
+            return False
+        
+s1 = Student()
+print("Student 1")
+s1.set_id(101)
+s1.set_marks(87)
+s1.set_age(27)
+print(s1.check_qualification())
+
+print()
+print("Student 2")
+
+s2 = Student()
+s2.set_id(102)
+s2.set_marks(61)
+s2.set_age(25)
+print(s2.check_qualification())
+
+        
+
 
