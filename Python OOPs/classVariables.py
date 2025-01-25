@@ -41,6 +41,7 @@ class Mobile:
     def set_discount(cls,discount):
         cls.__discount = discount
 
+    @classmethod
     def get_discount(self):
         return self.__discount 
     
