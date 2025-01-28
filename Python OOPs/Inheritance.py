@@ -96,7 +96,7 @@ class SmartPhone(Phone):
     def display(self):
         print(f'Brand is:{self.brand}')
         # print(f'Price is:{self.__price}') 
-        print(f'Price is: {self.get_price()}')
+        print(f'Price is: {self.get_price()}')  # Using getter method to access the private variable of parent class
 
 s1 = SmartPhone(25000,'Samsung','25px') 
 s1.display()
